@@ -1,0 +1,13 @@
+.socialOverviewSingle {
+  &-buttonsContainer {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    font-size: 20px;
+  }
+
+  &-bio {
+    display: block;
+    margin: 15px 0 15px 0;
+  }
+}

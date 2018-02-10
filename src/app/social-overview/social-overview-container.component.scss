@@ -1,0 +1,31 @@
+.socialOverviewContainer {
+  &-container {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    justify-content: center;
+  }
+
+  &-singleContainer {
+    background: #BE93C5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(-35deg, #289DCC, #815EFF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(-35deg, #289DCC, #815EFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 60px 0 rgba(48,25,131,0.3);
+    color: #fff;
+    margin: 10px;
+    position: relative;
+    padding: 20px;
+    min-height: 310px;
+    width: 300px;
+  }
+
+  &-editForm {
+    display: block;
+    color: #fff;
+    border-radius: 10px;
+    height: 100%;
+  }
+}

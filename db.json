@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "first_name": "Sam",
+      "last_name": "Kelham",
+      "location": "Lincoln, UK",
+      "followers": "1000",
+      "following": "999",
+      "checkins": "8823",
+      "image": "https://randomuser.me/api/portraits/men/9.jpg",
+      "id": 1
+    },
+    {
+      "first_name": "Jessica",
+      "last_name": "Taylor",
+      "location": "Lincoln, UK",
+      "followers": "124",
+      "following": "124",
+      "checkins": "19",
+      "image": "https://randomuser.me/api/portraits/women/11.jpg",
+      "id": 2
+    },
+    {
+      "first_name": "Aimee",
+      "last_name": "Loughlin",
+      "location": "Lincoln, UK",
+      "followers": "1000",
+      "following": "999",
+      "checkins": "882",
+      "image": "https://randomuser.me/api/portraits/women/87.jpg",
+      "id": 3
+    },
+    {
+      "first_name": "Hannah",
+      "last_name": "Rook",
+      "location": "Lincoln, UK",
+      "followers": "124",
+      "following": "124",
+      "checkins": "1",
+      "image": "https://randomuser.me/api/portraits/women/46.jpg",
+      "id": 4
+    }
+  ]
+}

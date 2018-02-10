@@ -1,0 +1,50 @@
+<div class="socialOverviewEditForm-container">
+  <form class="socialOverviewEditForm-form" #editUser="ngForm" (ngSubmit)="onSubmit(editUser.value, appSocialOverviewEditFormData.id)">
+    <div class="socialOverviewEditForm-formRow">
+      <label class="socialOverviewEditForm-label">First Name:</label>
+      <input class="socialOverviewEditForm-input" type="text" id="firstName" name="first_name"
+             [(ngModel)]="appSocialOverviewEditFormData.first_name"/>
+    </div>
+
+    <div class="socialOverviewEditForm-formRow">
+      <label class="socialOverviewEditForm-label">Last Name:</label>
+      <input class="socialOverviewEditForm-input" type="text" id="lastName" name="last_name"
+             [(ngModel)]="appSocialOverviewEditFormData.last_name"/>
+    </div>
+
+    <div class="socialOverviewEditForm-formRow">
+      <label class="socialOverviewEditForm-label">Location</label>
+      <input class="socialOverviewEditForm-input" type="text" id="location" name="location"
+             [(ngModel)]="appSocialOverviewEditFormData.location"/>
+    </div>
+
+    <div class="socialOverviewEditForm-formRow">
+      <label class="socialOverviewEditForm-label">Follower</label>
+      <input class="socialOverviewEditForm-input" type="text" id="followers" name="followers"
+             [(ngModel)]="appSocialOverviewEditFormData.followers"/>
+    </div>
+
+    <div class="socialOverviewEditForm-formRow">
+      <label class="socialOverviewEditForm-label">Following</label>
+      <input class="socialOverviewEditForm-input" type="text" id="following" name="following"
+             [(ngModel)]="appSocialOverviewEditFormData.following"/>
+    </div>
+
+    <div class="socialOverviewEditForm-formRow">
+      <label class="socialOverviewEditForm-label">Checkin</label>
+      <input class="socialOverviewEditForm-input" type="text" id="checkin" name="checkins"
+             [(ngModel)]="appSocialOverviewEditFormData.checkins"/>
+    </div>
+
+    <div class="socialOverviewEditForm-formRowFull">
+      <label class="socialOverviewEditForm-label">Image</label>
+      <input class="socialOverviewEditForm-input" type="text" id="image" name="image"
+             [(ngModel)]="appSocialOverviewEditFormData.image"/>
+    </div>
+
+    <div class="socialOverviewEditForm-formRowFull  socialOverviewEditForm-formFooter">
+      <button class="socialOverviewEditForm-submit" (click)="hideForm()">Cancel</button>
+      <button class="socialOverviewEditForm-submit" type="submit">Submit</button>
+    </div>
+  </form>
+</div>

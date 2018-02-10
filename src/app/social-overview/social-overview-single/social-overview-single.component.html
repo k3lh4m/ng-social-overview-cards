@@ -1,0 +1,25 @@
+<div class="socialOverviewSingle-container">
+  <div class="socialOverviewSingle-buttonsContainer">
+    <app-edit-user
+      class="socialOverviewSingle-editUser socialOverviewEditUser"
+      [appSocialOverviewEditUserId]="appSocialOverviewSingleData.id"
+      (appSocialOverviewUserEdited)="triggerEditForm()"></app-edit-user>
+    <app-delete-user
+      class="socialOverviewSingle-deleteUser socialOverviewDeleteUser"
+      [appSocialOverviewUserId]="appSocialOverviewSingleData.id"
+      (appSocialOverviewUserDeletedUser)="refreshUsers()"></app-delete-user>
+  </div>
+
+  <app-social-overview-image
+    class="socialOverviewSingle-image socialOverviewImage"
+    [appSocialOverviewImageConfig]="imageConfig">
+  </app-social-overview-image>
+  <app-social-overview-bio
+    class="socialOverviewSingle-bio socialOverviewBio"
+    [appSocialOverviewBioData]="userBio">
+  </app-social-overview-bio>
+  <app-social-overview-social-stats
+    class="socialOverviewSingle-socialStats socialOverviewSocialStats"
+    [appSocialOverviewSocialStatsData]="socialStats">
+  </app-social-overview-social-stats>
+</div>
