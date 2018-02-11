@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
-import 'rxjs/Rx';
-import {Http, Response, Headers, RequestOptions} from "@angular/http";
+import {Http, Response, Headers, RequestOptions} from '@angular/http';
+import {ApiSettings} from '../constants/api.const';
+import {IUser} from '../interfaces/social-overview-users.interface';
 import {Observable} from "rxjs";
-import {apiSettings} from "../constants/api.const";
-import {IUser} from "../interfaces/social-overview-users.interface";
+import 'rxjs/add/operator/map'
 
 @Injectable()
 export class ApiService {
@@ -13,14 +13,15 @@ export class ApiService {
     this._http = http;
   }
 
-  public getRecord(url: string): Observable<IUser[]> {
-    return this._http.get(url).map((response) => {
+  public getRecord(url: string) {
+    return this._http.get(url)
+      .map((response) => {
       return response.json();
     });
   }
 
   public getRecordById(id: string): Observable<IUser> {
-    return this._http.get(apiSettings.apiBasepath + 'users/' + id)
+    return this._http.get(ApiSettings.apiBasepath + 'users/' + id)
       .map(this.extractData)
   }
 
@@ -29,13 +30,13 @@ export class ApiService {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
-    return this._http.put(apiSettings.apiBasepath + 'users/' + id, bodyObject, options)
+    return this._http.put(ApiSettings.apiBasepath + 'users/' + id, bodyObject, options)
       .map((res:Response) => res.json())
       .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
   }
 
   public deleteRecord(id: number): Observable<IUser> {
-    return this._http.delete(apiSettings.apiBasepath + 'users/' + id).map((res:Response) => res.json()) // ...and calling .json() on the response to return data
+    return this._http.delete(ApiSettings.apiBasepath + 'users/' + id).map((res:Response) => res.json()) // ...and calling .json() on the response to return data
       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
@@ -44,7 +45,7 @@ export class ApiService {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
-    return this._http.post( apiSettings.apiBasepath + 'users/', bodyObject, options)
+    return this._http.post( ApiSettings.apiBasepath + 'users/', bodyObject, options)
       .map((res:Response) => res.json())
       .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
   }

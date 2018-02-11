@@ -1,4 +1,4 @@
-export class apiSettings {
+export class ApiSettings {
   public static apiBasepath = 'http://localhost:3000/';
 }
 

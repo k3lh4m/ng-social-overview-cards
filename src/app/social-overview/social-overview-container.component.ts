@@ -1,6 +1,6 @@
 import {Component, OnInit, Input, ViewEncapsulation} from '@angular/core';
 import {ApiService} from "../services/api.service";
-import {apiSettings} from "../constants/api.const";
+import {ApiSettings} from "../constants/api.const";
 import {IUser} from "../interfaces/social-overview-users.interface";
 
 @Component({
@@ -23,7 +23,7 @@ export class SocialOverviewContainerComponent implements OnInit {
   }
 
   public getUsersData(): void  {
-    this._apiService.getRecord(apiSettings.apiBasepath + 'users/').subscribe(data => {
+    this._apiService.getRecord(ApiSettings.apiBasepath + 'users/').subscribe(data => {
       this.userData = data;
       return this.userData;
     })
