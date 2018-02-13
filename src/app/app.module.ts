@@ -11,7 +11,7 @@ import { SocialOverviewBioComponent } from './social-overview/social-overview-si
 import { SocialOverviewSocialStatsComponent } from './social-overview/social-overview-single/social-overview-social-stats/social-overview-social-stats.component';
 import { CreateFormComponent } from './social-overview/user-forms/create-form/create-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { SocialOverviewEditUserComponent } from './social-overview/shared/edit-user/social-overview-edit-user.component';
+import { SocialOverviewEditUserComponent } from './social-overview/shared/social-overview-edit-user/social-overview-edit-user.component';
 import { EditFormComponent } from './social-overview/user-forms/edit-form/edit-form.component';
 import {SocialOverviewDeleteUserComponent} from "./social-overview/shared/social-overview-delete-user/social-overview-delete-user.component";
 
