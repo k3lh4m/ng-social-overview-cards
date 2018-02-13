@@ -1,28 +1,23 @@
-import {Component, OnInit, Output, Input, EventEmitter} from '@angular/core';
+import {Component, Output, Input, EventEmitter} from '@angular/core';
 import {ApiService} from "../../../services/api.service";
+import {IEditUser} from "./edit-user.component.interface";
 
 @Component({
   selector: 'app-edit-user',
   templateUrl: './edit-user.component.html',
   styleUrls: ['./edit-user.component.scss']
 })
-export class EditUserComponent implements OnInit {
-  @Input()
-  appSocialOverviewEditUserId: number;
-
+export class EditUserComponent implements IEditUser {
   @Output()
-  appSocialOverviewUserEdited: EventEmitter<any> = new EventEmitter<any>();
+  appSocialOverviewUserEdited: EventEmitter<void> = new EventEmitter<void>();
 
   private _http: ApiService;
 
-  constructor(apiService: ApiService ) {
+  constructor(apiService: ApiService) {
     this._http = apiService
   }
 
-  ngOnInit() {
-  }
-
-  public editUser(id: string) {
+  public editUser(): void {
     this.appSocialOverviewUserEdited.emit()
   }
 
