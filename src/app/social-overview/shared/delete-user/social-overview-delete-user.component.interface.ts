@@ -1,5 +1,5 @@
 import {EventEmitter} from "@angular/core";
-export interface IDeleteUser {
+export interface ISocialOverviewDeleteUser {
   appSocialOverviewUserId: number;
   appSocialOverviewUserDeletedUser: EventEmitter;
 }

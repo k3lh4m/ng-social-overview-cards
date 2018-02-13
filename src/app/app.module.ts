@@ -12,7 +12,7 @@ import { SocialOverviewSocialStatsComponent } from './social-overview/social-ove
 import { CreateFormComponent } from './social-overview/user-forms/create-form/create-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { EditUserComponent } from './social-overview/shared/edit-user/edit-user.component';
-import { DeleteUserComponent } from './social-overview/shared/delete-user/delete-user.component';
+import { SocialOverviewDeleteUserComponent } from './social-overview/shared/delete-user/social-overview-delete-user.component';
 import { EditFormComponent } from './social-overview/user-forms/edit-form/edit-form.component';
 
 
@@ -26,7 +26,7 @@ import { EditFormComponent } from './social-overview/user-forms/edit-form/edit-f
     SocialOverviewSocialStatsComponent,
     CreateFormComponent,
     EditUserComponent,
-    DeleteUserComponent,
+    SocialOverviewDeleteUserComponent,
     EditFormComponent,
   ],
   imports: [
