@@ -1,17 +1,18 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {ApiService} from "../../../services/api.service";
+import {IDeleteUser} from "./delete-user.component.interface";
 
 @Component({
   selector: 'app-delete-user',
   templateUrl: './delete-user.component.html',
   styleUrls: ['./delete-user.component.scss']
 })
-export class DeleteUserComponent implements OnInit {
+export class DeleteUserComponent implements IDeleteUser {
   @Input()
   appSocialOverviewUserId;
 
   @Output()
-  appSocialOverviewUserDeletedUser: EventEmitter<any> = new EventEmitter<any>();
+  appSocialOverviewUserDeletedUser: EventEmitter<void> = new EventEmitter<void>();
 
   private _apiService: ApiService;
 
@@ -19,11 +20,8 @@ export class DeleteUserComponent implements OnInit {
     this._apiService = apiService
   }
 
-  ngOnInit() {
-  }
-
-  public deleteRecord(id) {
-    this._apiService.deleteRecord(id).subscribe( success => {
+  public deleteRecord(id: number) {
+    this._apiService.deleteRecord(id).subscribe(() => {
       this.appSocialOverviewUserDeletedUser.emit();
     })
   }
