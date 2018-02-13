@@ -1,13 +1,12 @@
 import {Component, Output, Input, EventEmitter} from '@angular/core';
 import {ApiService} from "../../../services/api.service";
-import {IEditUser} from "./edit-user.component.interface";
+import {ISocialOverviewEditUser} from "./social-overview-edit-user.component.interface";
 
 @Component({
-  selector: 'app-edit-user',
-  templateUrl: './edit-user.component.html',
-  styleUrls: ['./edit-user.component.scss']
+  selector: 'app-social-overview-edit-user',
+  templateUrl: 'social-overview-edit-user.component.html'
 })
-export class EditUserComponent implements IEditUser {
+export class SocialOverviewEditUserComponent implements ISocialOverviewEditUser {
   @Output()
   appSocialOverviewUserEdited: EventEmitter<void> = new EventEmitter<void>();
 
