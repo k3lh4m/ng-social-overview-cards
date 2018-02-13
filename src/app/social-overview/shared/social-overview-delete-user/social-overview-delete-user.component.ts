@@ -9,7 +9,7 @@ import {ISocialOverviewDeleteUser} from "./social-overview-delete-user.component
 })
 export class SocialOverviewDeleteUserComponent implements ISocialOverviewDeleteUser {
   @Input()
-  appSocialOverviewUserId;
+  appSocialOverviewUserId: number;
 
   @Output()
   appSocialOverviewUserDeletedUser: EventEmitter<void> = new EventEmitter<void>();
