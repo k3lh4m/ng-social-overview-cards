@@ -1,0 +1,16 @@
+<div class="formTextInput-formRow">
+  <div class="formTextInput-label">
+    <label *ngIf="label" [attr.for]="identifier">{{label}}</label>
+  </div>
+
+  <div class="formTextInput-inputContainer">
+    <input
+      type="text"
+      class="formTextInput-input"
+      [placeholder]="placeholder"
+      [(ngModel)]="value"
+      [ngClass]="{invalid: (invalid | async)}"/>
+    <app-validation-messages *ngIf="invalid | async" [messages]="failures | async">
+    </app-validation-messages>
+  </div>
+</div>

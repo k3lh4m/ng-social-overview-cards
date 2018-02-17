@@ -1,4 +1,9 @@
 input {
   border: 1px solid #ffffff;
   background-color: transparent;
+  outline: 0;
+}
+
+input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
