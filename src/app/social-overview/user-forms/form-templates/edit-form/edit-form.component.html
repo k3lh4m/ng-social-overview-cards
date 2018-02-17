@@ -1,0 +1,69 @@
+<div class="socialOverviewEditForm-container">
+  <form class="socialOverviewEditForm-form" #editUser="ngForm" (ngSubmit)="onSubmit(editUser.value, appSocialOverviewEditFormData.id)">
+    <app-form-text-input
+      required
+      appNoNumbers
+      name="first_name"
+      class="socialOverviewEditForm-formTextHalf formTextInput"
+      [label]="editUserLabels.first_name"
+      [(ngModel)]="appSocialOverviewEditFormData.first_name"
+      [placeholder]="editUserLabels.first_name"
+    ></app-form-text-input>
+    <app-form-text-input
+      required
+      appNoNumbers
+      name="last_name"
+      class="socialOverviewEditForm-formTextHalf formTextInput"
+      [label]="editUserLabels.last_name"
+      [(ngModel)]="appSocialOverviewEditFormData.last_name"
+      [placeholder]="editUserLabels.last_name"
+    ></app-form-text-input>
+    <app-form-text-input
+      required
+      appNoNumbers
+      name="location"
+      class="socialOverviewEditForm-formTextHalf formTextInput"
+      [label]="editUserLabels.location"
+      [(ngModel)]="appSocialOverviewEditFormData.location"
+      [placeholder]="editUserLabels.location"
+    ></app-form-text-input>
+    <app-form-text-input
+      required
+      name="following"
+      class="socialOverviewEditForm-formTextHalf formTextInput"
+      [label]="editUserLabels.following"
+      [(ngModel)]="appSocialOverviewEditFormData.following"
+      [placeholder]="editUserLabels.following"
+    ></app-form-text-input>
+    <app-form-text-input
+      required
+      name="followers"
+      class="socialOverviewEditForm-formTextHalf formTextInput"
+      [label]="editUserLabels.followers"
+      [(ngModel)]="appSocialOverviewEditFormData.followers"
+      [placeholder]="editUserLabels.followers"
+    ></app-form-text-input>
+    <app-form-text-input
+      required
+      name="checkins"
+      class="socialOverviewEditForm-formTextHalf formTextInput"
+      [label]="editUserLabels.checkins"
+      [(ngModel)]="appSocialOverviewEditFormData.checkins"
+      [placeholder]="editUserLabels.checkins"
+    ></app-form-text-input>
+    <app-form-text-input
+      required
+      name="image"
+      appValidateUrl
+      class="socialOverviewEditForm-formTextFull formTextInput"
+      [label]="editUserLabels.image"
+      [(ngModel)]="appSocialOverviewEditFormData.image"
+      [placeholder]="editUserLabels.image"
+    ></app-form-text-input>
+
+    <div class="socialOverviewEditForm-formFooter">
+      <button class="socialOverviewEditForm-submit" (click)="hideForm()">Cancel</button>
+      <button class="socialOverviewEditForm-submit" type="Submit" [disabled]="!editUser.valid">Submit</button>
+    </div>
+  </form>
+</div>

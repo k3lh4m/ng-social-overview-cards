@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   }
 
   public getUsersData() {
-    this._apiService.getRecord(this.dataUrl).subscribe(data => {
+    this._apiService.getUsers(this.dataUrl).subscribe(data => {
       this.userData = data;
       return this.userData;
     });

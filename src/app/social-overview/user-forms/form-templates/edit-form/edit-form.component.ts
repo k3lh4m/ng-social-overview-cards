@@ -1,20 +1,15 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {ApiService} from "../../../services/api.service";
+import {Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation} from '@angular/core';
+import {ApiService} from "../../../../services/api.service";
 
 @Component({
   selector: 'app-edit-form',
-  templateUrl: './edit-form.component.html',
-  styleUrls: ['./edit-form.component.scss']
+  encapsulation: ViewEncapsulation.None,
+  templateUrl: 'edit-form.component.html',
+  styleUrls: ['edit-form.component.scss']
 })
 export class EditFormComponent implements OnInit {
   @Input()
   appSocialOverviewEditFormData;
-  //
-  // @Input()
-  // set appSocialOverviewEditFormShowForm(showForm) {
-  //  this.showEditForm = showForm;
-  //  console.log('am I showing the form', showForm)
-  // };
 
   @Output()
   appSocialOverviewEditFormUserUpdated: EventEmitter<any> = new EventEmitter<any>();
@@ -22,7 +17,7 @@ export class EditFormComponent implements OnInit {
   @Output()
   appSocialOverviewEditFormHideForm: EventEmitter<any> = new EventEmitter<any>();
 
-  public showEditForm;
+  public editUserLabels;
   private _apiService: ApiService;
 
   constructor(apiService: ApiService) {
@@ -30,10 +25,11 @@ export class EditFormComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.setFormLabels()
   }
 
   public onSubmit(form: any, id): void {
-    this._apiService.updateRecord(form, id).subscribe( data => {
+    this._apiService.updateRecord(form, id).subscribe(() => {
       this.appSocialOverviewEditFormUserUpdated.emit();
       this.hideForm()
     });
@@ -41,6 +37,18 @@ export class EditFormComponent implements OnInit {
 
   public hideForm() {
     this.appSocialOverviewEditFormHideForm.emit()
+  }
+
+  private setFormLabels():void {
+    this.editUserLabels = {
+      first_name: "First Name",
+      last_name: "Last Name",
+      location: "Location",
+      followers: "Followers",
+      following: "Following",
+      checkins: "Checkins",
+      image: "Image URL"
+    }
   }
 
 }

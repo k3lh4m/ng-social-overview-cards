@@ -23,7 +23,7 @@ export class SocialOverviewContainerComponent implements OnInit {
   }
 
   public getUsersData(): void  {
-    this._apiService.getRecord(ApiSettings.apiBasepath + 'users/').subscribe(data => {
+    this._apiService.getUsers(ApiSettings.apiBasepath + 'users/').subscribe(data => {
       this.userData = data;
       return this.userData;
     })
