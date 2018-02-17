@@ -5,39 +5,34 @@ import {IUser} from '../interfaces/social-overview-users.interface';
 import {Observable} from "rxjs";
 import 'rxjs/Rx';
 
-const httpHeaders = {
-  header: new HttpHeaders({'Content-Type': 'application/json'})
-};
-
 @Injectable()
 export class ApiService {
   private _http: HttpClient;
+  private _httpHeaders = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
 
   constructor(httpClient: HttpClient) {
     this._http = httpClient;
   }
 
-  public getRecord(url: string) {
-    return this._http.get(url);
+  public getUsers(url: string): Observable<IUser[]>  {
+    return this._http.get<IUser[]>(url);
   }
 
   public getRecordById(id: string): Observable<IUser> {
     return this._http.get(ApiSettings.apiBasepath + 'users/' + id);
   }
 
-  public updateRecord(body: IUser, id: number): Observable<IUser> {
-    let bodyObject = JSON.stringify(body);
-
-    return this._http.put(ApiSettings.apiBasepath + 'users/' + id, bodyObject, httpHeaders)
+  public updateRecord(body: IUser, id: number): Observable<any> {
+    return this._http.put(ApiSettings.apiBasepath + 'users/' + id, body, this._httpHeaders)
   }
 
-  public deleteRecord(id: number): Observable<IUser> {
+  public deleteRecord(id: number): Observable<any> {
     return this._http.delete(ApiSettings.apiBasepath + 'users/' + id);
   }
 
-  public addRecord(body: IUser): Observable<IUser> {
+  public addRecord(body: IUser): Observable<any> {
     let bodyObject = JSON.stringify(body);
 
-    return this._http.post(ApiSettings.apiBasepath + 'users/', bodyObject, httpHeaders);
+    return this._http.post(ApiSettings.apiBasepath + 'users/', bodyObject, this._httpHeaders);
   }
 }
