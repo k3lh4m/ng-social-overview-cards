@@ -3,18 +3,15 @@ import {Component, OnInit, Input} from '@angular/core';
 @Component({
   selector: 'app-validation-messages',
   template: `
-    <div class="container">
-      <ul>
-        <li *ngFor="let message of messages">{{message}}</li>
+    <div class="validationMessages-container">
+      <ul class="validationMessages-messageContainer">
+        <li class="validationMessages-message" *ngFor="let message of messages">{{message}}</li>
       </ul>
     </div>
-  `
+  `,
+  styleUrls: ['validation-messages.component.scss']
 })
 export class ValidationMessagesComponent {
   @Input()
   messages: Array<string>;
-
-  ngOnInit(): any {
-    console.log(this.messages);
-  }
 }
