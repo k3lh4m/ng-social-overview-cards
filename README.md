@@ -3,6 +3,8 @@ I began working on theis project after I left my employment. I wanted to carry o
 
 This project is based on the on the social overview cards that can be found on the SketchApp website [Sketch App](https://www.sketchapp.com/#symbols).
 
+Check out the components I have built here: [Social Overview Cards](http://kelham.co/social-overview-cards/index.html)
+
 #### Changing user details in form
 
 ![Changing User name](http://kelham.co/github/change_name.gif)
