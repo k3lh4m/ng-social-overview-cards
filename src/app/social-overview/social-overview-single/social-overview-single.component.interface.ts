@@ -2,7 +2,6 @@ import {EventEmitter} from "@angular/core";
 
 export interface ISocialOverviewSingle {
   appSocialOverviewSingleData: any,
-  appSocialOverviewSingleDeletedUser: EventEmitter<void>
   appSocialOverviewSingleTriggerEditForm: EventEmitter<void>
 }
 
