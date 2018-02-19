@@ -7,17 +7,11 @@ import {
 } from '@angular/forms';
 
 
-import {Observable} from 'rxjs';
-
+import {Observable} from 'rxjs/Observable';
 
 export type ValidationResult = {[validator: string]: string | boolean};
-
-
 export type AsyncValidatorArray = Array<Validator | AsyncValidatorFn>;
-
-
 export type ValidatorArray = Array<Validator | ValidatorFn>;
-
 
 const normalizeValidator =
   (validator: Validator | ValidatorFn): ValidatorFn | AsyncValidatorFn => {
@@ -29,7 +23,6 @@ const normalizeValidator =
     }
   };
 
-
 export const composeValidators =
   (validators: ValidatorArray): AsyncValidatorFn | ValidatorFn => {
     if (validators == null || validators.length === 0) {
@@ -38,17 +31,12 @@ export const composeValidators =
     return Validators.compose(validators.map(normalizeValidator));
   };
 
-
 export const validate =
   (validators: ValidatorArray, asyncValidators: AsyncValidatorArray) => {
     return (control: AbstractControl) => {
       const synchronousValid = () => composeValidators(validators)(control);
-
-
       if (asyncValidators) {
         const asyncValidator = composeValidators(asyncValidators);
-
-
         return asyncValidator(control).map(v => {
           const secondary = synchronousValid();
           if (secondary || v) { // compose async and sync validator results
@@ -56,13 +44,9 @@ export const validate =
           }
         });
       }
-
-
       if (validators) {
         return Observable.of(synchronousValid());
       }
-
-
       return Observable.of(null);
     };
   };

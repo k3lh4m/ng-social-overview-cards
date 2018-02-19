@@ -1,9 +1,8 @@
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {ApiSettings} from '../constants/api.const';
 import {IUser} from '../interfaces/social-overview-users.interface';
-import {Observable} from "rxjs";
-import 'rxjs/Rx';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class ApiService {
@@ -23,7 +22,7 @@ export class ApiService {
   }
 
   public updateRecord(body: IUser, id: number): Observable<any> {
-    return this._http.put(ApiSettings.apiBasepath + 'users/' + id, body, this._httpHeaders)
+    return this._http.put(ApiSettings.apiBasepath + 'users/' + id, body, this._httpHeaders);
   }
 
   public deleteRecord(id: number): Observable<any> {
@@ -31,7 +30,7 @@ export class ApiService {
   }
 
   public addRecord(body: IUser): Observable<any> {
-    let bodyObject = JSON.stringify(body);
+    const bodyObject = JSON.stringify(body);
 
     return this._http.post(ApiSettings.apiBasepath + 'users/', bodyObject, this._httpHeaders);
   }

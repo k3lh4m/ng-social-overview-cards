@@ -1,6 +1,6 @@
 import {NgModel} from '@angular/forms';
 
-import {Observable} from 'rxjs';
+import {Observable} from 'rxjs/Observable';
 
 import {ValueAccessorBase} from '../value-accessor-base/value-accessor-base.component';
 

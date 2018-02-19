@@ -1,7 +1,6 @@
-import {Component, OnInit, Input, ViewEncapsulation} from '@angular/core';
-import {ISocialOverviewBio} from "./social-overview-bio.component.interface";
-import {IUser} from "../../../interfaces/social-overview-users.interface";
-import {IUserBio} from "../social-overview-single.component.interface";
+import {Component, Input, ViewEncapsulation} from '@angular/core';
+import {ISocialOverviewBio} from './social-overview-bio.component.interface';
+import {IUserBio} from '../social-overview-single.component.interface';
 
 @Component({
   selector: 'app-social-overview-bio',

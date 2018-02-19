@@ -1,6 +1,6 @@
 import {ControlValueAccessor} from '@angular/forms';
 
-export class ValueAccessorBase<T> implements ControlValueAccessor{
+export class ValueAccessorBase<T> implements ControlValueAccessor {
   private innerValue: T;
 
 

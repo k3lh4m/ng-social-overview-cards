@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {ISocialOverviewDeleteUser} from "./social-overview-delete-user.component.interface";
-import {FirebaseApiService} from "../../../services/firebaseApi.service";
+import {ISocialOverviewDeleteUser} from './social-overview-delete-user.component.interface';
+import {FirebaseApiService} from '../../../services/firebaseApi.service';
 
 @Component({
   selector: 'app-delete-user',
@@ -13,7 +13,7 @@ export class SocialOverviewDeleteUserComponent implements ISocialOverviewDeleteU
 
   private _apiService: FirebaseApiService;
 
-  constructor(firebaseApiService: FirebaseApiService,) {
+  constructor(firebaseApiService: FirebaseApiService) {
     this._apiService = firebaseApiService;
   }
 

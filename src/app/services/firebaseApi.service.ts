@@ -1,8 +1,7 @@
 import {AngularFireDatabase} from 'angularfire2/database';
 import {Injectable} from '@angular/core';
 import {IUser} from '../interfaces/social-overview-users.interface';
-import {Observable} from "rxjs";
-import 'rxjs/Rx';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class FirebaseApiService {
@@ -18,6 +17,6 @@ export class FirebaseApiService {
   }
 
   public updateUser(id, form: IUser): void {
-    this.db.list('/users').update(id, form)
+    this.db.list('/users').update(id, form);
   }
 }

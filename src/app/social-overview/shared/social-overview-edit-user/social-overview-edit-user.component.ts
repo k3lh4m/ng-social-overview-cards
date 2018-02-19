@@ -1,6 +1,6 @@
 import {Component, Output, Input, EventEmitter} from '@angular/core';
-import {ApiService} from "../../../services/api.service";
-import {ISocialOverviewEditUser} from "./social-overview-edit-user.component.interface";
+import {ApiService} from '../../../services/api.service';
+import {ISocialOverviewEditUser} from './social-overview-edit-user.component.interface';
 
 @Component({
   selector: 'app-social-overview-edit-user',
@@ -13,11 +13,11 @@ export class SocialOverviewEditUserComponent implements ISocialOverviewEditUser 
   private _http: ApiService;
 
   constructor(apiService: ApiService) {
-    this._http = apiService
+    this._http = apiService;
   }
 
   public editUser(): void {
-    this.appSocialOverviewUserEdited.emit()
+    this.appSocialOverviewUserEdited.emit();
   }
 
 }

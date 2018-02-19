@@ -1,5 +1,5 @@
-import {ISocialStats} from "../social-overview-single.component.interface";
+import {ISocialStats} from '../social-overview-single.component.interface';
 
 export interface ISocialOverviewSocialStats {
-  appSocialOverviewSocialStatsData: ISocialStats
+  appSocialOverviewSocialStatsData: ISocialStats;
 }

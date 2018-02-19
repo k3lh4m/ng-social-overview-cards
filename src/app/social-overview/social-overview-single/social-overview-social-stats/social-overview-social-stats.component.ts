@@ -1,6 +1,6 @@
-import {Component, OnInit, ViewEncapsulation, Input} from '@angular/core';
-import {ISocialOverviewSocialStats} from "./social-overview-social-stats.component.interface";
-import {ISocialStats} from "../social-overview-single.component.interface";
+import {Component, ViewEncapsulation, Input} from '@angular/core';
+import {ISocialOverviewSocialStats} from './social-overview-social-stats.component.interface';
+import {ISocialStats} from '../social-overview-single.component.interface';
 
 @Component({
   selector: 'app-social-overview-social-stats',

@@ -1,4 +1,4 @@
-import {IUserBio} from "../social-overview-single.component.interface";
+import {IUserBio} from '../social-overview-single.component.interface';
 export interface ISocialOverviewBio {
-  appSocialOverviewBioData: IUserBio
+  appSocialOverviewBioData: IUserBio;
 }

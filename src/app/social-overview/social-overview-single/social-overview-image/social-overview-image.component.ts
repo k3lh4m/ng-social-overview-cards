@@ -1,6 +1,6 @@
-import {Component, OnInit, Input, ViewEncapsulation} from '@angular/core';
-import {ISocialOverviewImage} from "./social-overview-image.component.interface";
-import {IImageConfig} from "../social-overview-single.component.interface";
+import {Component, Input, ViewEncapsulation} from '@angular/core';
+import {ISocialOverviewImage} from './social-overview-image.component.interface';
+import {IImageConfig} from '../social-overview-single.component.interface';
 
 @Component({
   selector: 'app-social-overview-image',

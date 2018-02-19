@@ -1,4 +1,4 @@
-import {IImageConfig} from "../social-overview-single.component.interface";
+import {IImageConfig} from '../social-overview-single.component.interface';
 export interface ISocialOverviewImage {
-  appSocialOverviewImageConfig: IImageConfig
+  appSocialOverviewImageConfig: IImageConfig;
 }

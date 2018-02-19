@@ -2,8 +2,8 @@ import {Component, OnInit, Input, ViewEncapsulation, Output, EventEmitter} from 
 import {
   ISocialOverviewSingle, ISocialStats, IImageConfig,
   IUserBio
-} from "./social-overview-single.component.interface";
-import {IUser} from "../../interfaces/social-overview-users.interface";
+} from './social-overview-single.component.interface';
+import {IUser} from '../../interfaces/social-overview-users.interface';
 
 @Component({
   selector: 'app-social-overview-single',
@@ -32,7 +32,7 @@ export class SocialOverviewSingleComponent implements OnInit, ISocialOverviewSin
   }
 
   public triggerEditForm() {
-    this.appSocialOverviewSingleTriggerEditForm.emit()
+    this.appSocialOverviewSingleTriggerEditForm.emit();
   }
 
   private setBio() {
@@ -40,14 +40,14 @@ export class SocialOverviewSingleComponent implements OnInit, ISocialOverviewSin
       firstName: this.appSocialOverviewSingleData.first_name,
       lastName: this.appSocialOverviewSingleData.last_name,
       location: this.appSocialOverviewSingleData.location
-    }
+    };
   }
 
   private setImageConfig() {
     this.imageConfig = {
       src: this.appSocialOverviewSingleData.image,
       width: 140
-    }
+    };
   }
 
   private setSocialStats() {
@@ -55,6 +55,6 @@ export class SocialOverviewSingleComponent implements OnInit, ISocialOverviewSin
       following: this.appSocialOverviewSingleData.following,
       followers: this.appSocialOverviewSingleData.followers,
       checkIns: this.appSocialOverviewSingleData.checkins
-    }
+    };
   }
 }
