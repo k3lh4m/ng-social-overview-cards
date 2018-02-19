@@ -16,9 +16,6 @@ export class SocialOverviewSingleComponent implements OnInit, ISocialOverviewSin
   appSocialOverviewSingleData: IUser;
 
   @Output()
-  appSocialOverviewSingleDeletedUser: EventEmitter<void> = new EventEmitter<void>();
-
-  @Output()
   appSocialOverviewSingleTriggerEditForm: EventEmitter<void> = new EventEmitter<void>();
 
   public userBio: IUserBio;
@@ -32,10 +29,6 @@ export class SocialOverviewSingleComponent implements OnInit, ISocialOverviewSin
     this.setBio();
     this.setImageConfig();
     this.setSocialStats();
-  }
-
-  public refreshUsers() {
-    this.appSocialOverviewSingleDeletedUser.emit();
   }
 
   public triggerEditForm() {
