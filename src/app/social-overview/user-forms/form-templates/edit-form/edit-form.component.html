@@ -1,5 +1,5 @@
 <div class="socialOverviewEditForm-container">
-  <form class="socialOverviewEditForm-form" #editUser="ngForm" (ngSubmit)="onSubmit(editUser.value, appSocialOverviewEditFormData.id)">
+  <form class="socialOverviewEditForm-form" #editUser="ngForm" (submit)="onSubmitFb(editUser.value, appSocialOverviewEditFormData.id)">
     <app-form-text-input
       required
       appNoNumbers
@@ -62,8 +62,8 @@
     ></app-form-text-input>
 
     <div class="socialOverviewEditForm-formFooter">
-      <button class="socialOverviewEditForm-submit" (click)="hideForm()">Cancel</button>
-      <button class="socialOverviewEditForm-submit" type="Submit" [disabled]="!editUser.valid">Submit</button>
+      <button class="socialOverviewEditForm-submit" type="button" (click)="hideForm()">Cancel</button>
+      <button class="socialOverviewEditForm-submit" type="submit" [disabled]="!editUser.valid">Submit</button>
     </div>
   </form>
 </div>

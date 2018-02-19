@@ -26,10 +26,10 @@ export class FormTextInputComponent extends ElementBase<string>{
   public identifier = `form-text-${identifier++}`;
 
   constructor(
-    @Optional() @Inject(NG_VALIDATORS) private validators: Array<any>,
-    @Optional() @Inject(NG_ASYNC_VALIDATORS) private asyncValidators: Array<any>,
+    @Optional() @Inject(NG_VALIDATORS) public validator: Array<any>,
+    @Optional() @Inject(NG_ASYNC_VALIDATORS) public asyncValidator: Array<any>,
   ) {
-    super(validators, asyncValidators);
+    super(validator, asyncValidator);
   }
 }
 

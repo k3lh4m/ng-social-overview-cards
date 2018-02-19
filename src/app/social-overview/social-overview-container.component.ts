@@ -1,7 +1,7 @@
-import {Component, OnInit, Input, ViewEncapsulation} from '@angular/core';
-import {ApiService} from "../services/api.service";
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {ApiSettings} from "../constants/api.const";
 import {IUser} from "../interfaces/social-overview-users.interface";
+import {FirebaseApiService} from "../services/firebaseApi.service";
 
 @Component({
   selector: 'app-social-overview-container',
@@ -12,20 +12,19 @@ import {IUser} from "../interfaces/social-overview-users.interface";
 export class SocialOverviewContainerComponent implements OnInit {
   public userData: Array<IUser>;
   public showForm = {};
-  private _apiService: ApiService;
+  private _apiService: FirebaseApiService;
 
-  constructor(apiService: ApiService) {
-    this._apiService = apiService
+  constructor(firebaseApiService: FirebaseApiService,) {
+    this._apiService = firebaseApiService;
   }
 
   public ngOnInit(): void {
-    this.getUsersData();
+    this.getUsers();
   }
 
-  public getUsersData(): void  {
-    this._apiService.getUsers(ApiSettings.apiBasepath + 'users/').subscribe(data => {
-      this.userData = data;
-      return this.userData;
+  public getUsers(): void {
+    this._apiService.getUsers(ApiSettings.firebaseApiBasepath).subscribe( users => {
+      this.userData = users
     })
   }
 

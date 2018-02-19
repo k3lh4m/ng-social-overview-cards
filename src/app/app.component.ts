@@ -1,5 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {ApiService} from './services/api.service';
+import {Component, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,25 +6,6 @@ import {ApiService} from './services/api.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'app';
-  public dataUrl = 'http://localhost:3000/users';
-  public userData;
-
-  private _apiService;
-
-  constructor(apiService: ApiService) {
-    this._apiService = apiService;
-  }
-
-  public ngOnInit(): void {
-    this.getUsersData();
-  }
-
-  public getUsersData() {
-    this._apiService.getUsers(this.dataUrl).subscribe(data => {
-      this.userData = data;
-      return this.userData;
-    });
-  }
 }

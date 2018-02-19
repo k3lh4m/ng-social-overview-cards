@@ -3,7 +3,6 @@
     <app-social-overview-single
       *ngIf="!showForm[users.id]"
       [appSocialOverviewSingleData]="users"
-      (appSocialOverviewSingleDeletedUser)="getUsersData()"
       (appSocialOverviewSingleTriggerEditForm)="showEditForm(users)"
       class="socialOverviewContainer-singleCard socialOverviewSingle">
     </app-social-overview-single>
@@ -12,7 +11,6 @@
       *ngIf="showForm[users.id]"
       class="socialOverviewContainer-editForm socialOverviewEditForm"
       [appSocialOverviewEditFormData]="users"
-      (appSocialOverviewEditFormUserUpdated)="getUsersData()"
       (appSocialOverviewEditFormHideForm)="showEditForm(users)">
     </app-edit-form>
   </div>

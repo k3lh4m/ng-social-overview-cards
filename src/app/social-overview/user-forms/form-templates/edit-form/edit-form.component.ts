@@ -1,5 +1,6 @@
 import {Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation} from '@angular/core';
-import {ApiService} from "../../../../services/api.service";
+import {FirebaseApiService} from "../../../../services/firebaseApi.service";
+import {IUser} from "../../../../interfaces/social-overview-users.interface";
 
 @Component({
   selector: 'app-edit-form',
@@ -12,27 +13,23 @@ export class EditFormComponent implements OnInit {
   appSocialOverviewEditFormData;
 
   @Output()
-  appSocialOverviewEditFormUserUpdated: EventEmitter<any> = new EventEmitter<any>();
-
-  @Output()
   appSocialOverviewEditFormHideForm: EventEmitter<any> = new EventEmitter<any>();
 
   public editUserLabels;
-  private _apiService: ApiService;
+  private _apiService: FirebaseApiService;
 
-  constructor(apiService: ApiService) {
-    this._apiService = apiService;
+  constructor(firebaseApiService: FirebaseApiService,) {
+    this._apiService = firebaseApiService;
   }
 
   ngOnInit() {
     this.setFormLabels()
   }
 
-  public onSubmit(form: any, id): void {
-    this._apiService.updateRecord(form, id).subscribe(() => {
-      this.appSocialOverviewEditFormUserUpdated.emit();
-      this.hideForm()
-    });
+  public onSubmitFb(form: IUser, id: number | string): void {
+    const idToString = id.toString;
+    this._apiService.updateUser(idToString, form);
+    this.hideForm();
   }
 
   public hideForm() {

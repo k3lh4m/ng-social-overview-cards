@@ -1,6 +1,6 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {ApiService} from "../../../services/api.service";
+import {Component, Input} from '@angular/core';
 import {ISocialOverviewDeleteUser} from "./social-overview-delete-user.component.interface";
+import {FirebaseApiService} from "../../../services/firebaseApi.service";
 
 @Component({
   selector: 'app-delete-user',
@@ -11,19 +11,16 @@ export class SocialOverviewDeleteUserComponent implements ISocialOverviewDeleteU
   @Input()
   appSocialOverviewUserId: number;
 
-  @Output()
-  appSocialOverviewUserDeletedUser: EventEmitter<void> = new EventEmitter<void>();
+  private _apiService: FirebaseApiService;
 
-  private _apiService: ApiService;
-
-  constructor(apiService: ApiService) {
-    this._apiService = apiService
+  constructor(firebaseApiService: FirebaseApiService,) {
+    this._apiService = firebaseApiService;
   }
 
   public deleteRecord(id: number) {
-    this._apiService.deleteRecord(id).subscribe(() => {
-      this.appSocialOverviewUserDeletedUser.emit();
-    })
+    const idToString = id.toString();
+
+    this._apiService.deleteUser(idToString);
   }
 
 }

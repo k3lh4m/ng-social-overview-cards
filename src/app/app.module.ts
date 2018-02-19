@@ -9,11 +9,19 @@ import {SocialOverviewImageComponent} from './social-overview/social-overview-si
 import {SocialOverviewSingleComponent} from './social-overview/social-overview-single/social-overview-single.component';
 import {SocialOverviewBioComponent} from './social-overview/social-overview-single/social-overview-bio/social-overview-bio.component';
 import {SocialOverviewSocialStatsComponent} from './social-overview/social-overview-single/social-overview-social-stats/social-overview-social-stats.component';
-import {CreateFormComponent} from './social-overview/user-forms/create-form/create-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SocialOverviewEditUserComponent} from './social-overview/shared/social-overview-edit-user/social-overview-edit-user.component';
-import {EditFormComponent} from './social-overview/user-forms/edit-form/edit-form.component';
 import {SocialOverviewDeleteUserComponent} from "./social-overview/shared/social-overview-delete-user/social-overview-delete-user.component";
+import {environment} from "../environments/environment";
+import {AngularFireModule} from "angularfire2";
+import {AngularFireDatabaseModule} from "angularfire2/database";
+import {AngularFireAuthModule} from "angularfire2/auth";
+import {ValidationMessagesComponent} from "./social-overview/user-forms/form-components/validation-messages/validation-messages.component";
+import {EditFormComponent} from "./social-overview/user-forms/form-templates/edit-form/edit-form.component";
+import {FormTextInputComponent} from "./social-overview/user-forms/form-components/form-text-input/form-text-input.component";
+import {NoNumbersDirective} from "./directives/no-numerical/no-numbers.directive";
+import { ValidateUrlDirective } from './directives/validate-url/validate-url.directive';
+import {FirebaseApiService} from "./services/firebaseApi.service";
 
 @NgModule({
   declarations: [
@@ -23,18 +31,24 @@ import {SocialOverviewDeleteUserComponent} from "./social-overview/shared/social
     SocialOverviewSingleComponent,
     SocialOverviewBioComponent,
     SocialOverviewSocialStatsComponent,
-    CreateFormComponent,
     SocialOverviewEditUserComponent,
     SocialOverviewDeleteUserComponent,
+    ValidationMessagesComponent,
     EditFormComponent,
+    FormTextInputComponent,
+    NoNumbersDirective,
+    ValidateUrlDirective
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
-  providers: [ApiService],
+  providers: [ApiService, FirebaseApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
