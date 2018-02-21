@@ -26,8 +26,8 @@ export class EditFormComponent implements OnInit {
     this.setFormLabels();
   }
 
-  public onSubmitFb(form: IUser, id: number | string): void {
-    const idToString = id.toString;
+  public onSubmitFb(form: IUser, id): void {
+    const idToString = id.toString();
     this._apiService.updateUser(idToString, form);
     this.hideForm();
   }

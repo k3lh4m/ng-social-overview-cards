@@ -22,6 +22,7 @@ import {FormTextInputComponent} from './social-overview/user-forms/form-componen
 import {NoNumbersDirective} from './directives/no-numerical/no-numbers.directive';
 import { ValidateUrlDirective } from './directives/validate-url/validate-url.directive';
 import {FirebaseApiService} from './services/firebaseApi.service';
+import {SocialOverviewRefreshUsersComponent} from "./social-overview/shared/social-overview-refresh-users/social-overview-refresh-users.component";
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {FirebaseApiService} from './services/firebaseApi.service';
     EditFormComponent,
     FormTextInputComponent,
     NoNumbersDirective,
-    ValidateUrlDirective
+    ValidateUrlDirective,
+    SocialOverviewRefreshUsersComponent
   ],
   imports: [
     BrowserModule,

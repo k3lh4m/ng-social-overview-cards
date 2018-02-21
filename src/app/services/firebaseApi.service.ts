@@ -12,11 +12,11 @@ export class FirebaseApiService {
     return this.db.list(url).valueChanges();
   }
 
-  public deleteUser(id: string): void {
-    this.db.list('/users').remove(id);
+  public deleteUser(id?: string): any {
+    return this.db.list('/users').remove(id);
   }
 
-  public updateUser(id, form: IUser): void {
-    this.db.list('/users').update(id, form);
+  public updateUser(id, form: IUser): any {
+    return this.db.list('/users').update(id, form);
   }
 }

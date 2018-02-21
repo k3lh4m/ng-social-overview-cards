@@ -1,3 +1,10 @@
+<div class="socialOverviewContainer-row">
+  <app-social-overview-refresh-users
+    *ngIf="!showButton"
+    class="socialOverviewContainer-refreshUsers socialOverviewRefreshUsers">
+  </app-social-overview-refresh-users>
+</div>
+
 <div class="socialOverviewContainer-container" *ngIf="userData">
   <div class="socialOverviewContainer-singleContainer" *ngFor="let users of userData, let i = index">
     <app-social-overview-single

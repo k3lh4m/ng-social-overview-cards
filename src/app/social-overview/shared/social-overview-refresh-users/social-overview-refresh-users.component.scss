@@ -1,0 +1,15 @@
+.socialOverviewRefreshUsers {
+  &-button {
+    display: inline-block;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 60px 0 rgba(48,25,131,0.3);
+    border: 2px solid #289DCC;
+    color: #289DCC;
+    padding: 10px 20px
+  }
+
+  .fa-refresh {
+    padding: 0 0 0 5px;
+  }
+}
